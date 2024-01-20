@@ -1,0 +1,38 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: react-app-service
+  namespace: production
+spec:
+  type: NodePort
+  selector:
+    app: react-app
+  ports:
+  - protocol: TCP
+    port: 80
+    nodePort: 30003
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-app-deployment
+  namespace: production  
+  labels:
+    app: react-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: react-app
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      containers:
+      - name: react-app
+        image: wessamabdelwahab/react-app:latest
+        ports:
+        - containerPort: 80
