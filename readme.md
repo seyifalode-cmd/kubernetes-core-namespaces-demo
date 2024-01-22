@@ -1,6 +1,14 @@
 # Namespaces Code Examples
 
 ## Service deployment across namepaces
+
+Review existing namespaces and create new namespaces 
+```
+kubectl get namespaces
+kubectl create -f namespace-dev.yml
+kubectl create -f https://k8s.io/examples/admin/namespace-prod.json
+```
+
 Review each of the yml files, notice the differences between each.
 ```
 kubectl create -f react-app-pod.yml
@@ -25,4 +33,9 @@ kubectl get pods -l app=react-app --namespace=default
 Check which namespace has been configured
 ```
 kubectl config get-contexts
+```
+
+Review pods across all namespaces
+```
+kubectl get pods --all-namespaces
 ```
