@@ -1,4 +1,8 @@
-**Kubernetes Core Namespaces Demo** — isolating workloads across development and production environments within a single cluster using Kubernetes Namespaces.
+# Kubernetes Core Namespaces Demo
+
+Oluwaseyi Michael Falode | Cloud & DevOps Engineering | Toronto, ON
+
+Isolating workloads across development and production environments within a single cluster using Kubernetes Namespaces.
 
 ---
 
